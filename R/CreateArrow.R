@@ -907,7 +907,7 @@ createArrowFiles <- function(
   ){
   
   tstart1 <- Sys.time()
-  featureList <- split(feature, seqnames(feature))
+  featureList <- split(feature, seqnames(feature), drop=TRUE)
   chrArrow <- .availableChr(ArrowFile)
   featureList <- featureList[chrArrow]
   if(length(featureList)==0){
@@ -1035,7 +1035,7 @@ createArrowFiles <- function(
 
   tstart1 <- Sys.time()
   featureNames <- unique(mcols(feature)$FeatureName)
-  featureList <- split(feature, seqnames(feature))
+  featureList <- split(feature, seqnames(feature), drop=TRUE)
   chrArrow <- .availableChr(ArrowFile)
   featureList <- featureList[chrArrow]
   if(length(featureList)==0){
