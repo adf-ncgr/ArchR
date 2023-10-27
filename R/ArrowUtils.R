@@ -57,7 +57,7 @@
 .availableChr <- function(ArrowFiles = NULL, subGroup = "Fragments"){
   seqnames <- .availableSeqnames(ArrowFiles, subGroup)
 #adf : HACK
-  seqnames <- grep("^Gm[0-9][0-9]$", seqnames)
+  seqnames <- seqnames[grep("^Gm[0-9][0-9]$", seqnames)]
   # if(getArchRChrPrefix()){
   #   seqnames <- seqnames[grep("chr", seqnames, ignore.case = TRUE)]
   # }
